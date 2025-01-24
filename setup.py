@@ -31,6 +31,10 @@ if "upload_via_twine" in sys.argv:
 elif "upload_via_twine_testpypi" in sys.argv:
     system("twine upload --repository pypitest dist/netpyne_py3-" + version + "-py2.py3-none-any.whl")
 else:
+    #import os
+    #out_path = os.path.join(os.path.dirname(os.path.dirname(here)))
+    #os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    #packages = find_packages(exclude=["saveLoadV1"])
     setup(
         name="netpyne",
         version=version,  # update this in netpyne/__init__.py; makes it accessible to python scripts too...
