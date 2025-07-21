@@ -152,6 +152,10 @@ def loadSimCfg(filename, data=None, variable='simConfig', setLoaded=True):
 
     """
 
+    #if not endswith(filename, '_cfg.json'):
+    if not filename.endswith('_cfg.json'):
+        print('Warning: filename should end with _cfg.json')
+        filename = filename + '_cfg.json'
     if not data:
         data = _loadFile(filename)
     print('Loading simConfig...')

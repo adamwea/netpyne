@@ -187,9 +187,17 @@ def evolOptim(batch, pc):
     # -------------------------------------------------------------------------------
     from .utils import evaluator
 
-    global ngen
-    ngen = -1
+    # global ngen
+    # ngen = -1
 
+    # aw 2025-04-23 09:53:59
+    global ngen
+    if 'startGeneration' in batch.evolCfg:
+        ngen = batch.evolCfg['startGeneration'] - 1
+    else:
+        ngen = -1
+
+    
     def func(candidates, args):
         global ngen
         ngen += 1
